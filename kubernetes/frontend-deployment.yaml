@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: roshanjayathunga/bth-booking-frontend:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: VITE_HOTEL_API_URL
+              value: http://hotel-service:3001
+            - name: VITE_EVENT_API_URL
+              value: http://event-service:3002
