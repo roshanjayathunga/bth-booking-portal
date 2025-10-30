@@ -17,9 +17,6 @@ function Navbar() {
         <Link to="/events">
           <Button variant="ghost">Events</Button>
         </Link>
-        <Link to="/bookings">
-          <Button variant="ghost">Bookings</Button>
-        </Link>
       </div>
     </nav>
   );
