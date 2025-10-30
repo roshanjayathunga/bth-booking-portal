@@ -24,11 +24,6 @@ function Home() {
                 Browse Events
               </Button>
             </Link>
-            <Link to="/bookings">
-              <Button className="w-full" variant="secondary">
-                My Bookings
-              </Button>
-            </Link>
           </div>
         </Card>
       </div>
