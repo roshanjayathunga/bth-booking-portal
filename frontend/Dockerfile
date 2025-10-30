@@ -1,4 +1,4 @@
-# Build
+# Stage 1: Build
 FROM node:20 AS builder
 WORKDIR /app
 COPY package.json yarn.lock ./
@@ -6,7 +6,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 RUN yarn build
 
-# Serve static files
+# Stage 2: Serve static files
 FROM node:18-alpine
 WORKDIR /app
 COPY --from=builder /app/dist ./dist
